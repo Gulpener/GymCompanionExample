@@ -1,0 +1,21 @@
+<h1 id="tableLabel">Devices</h1>
+
+<p *ngIf="!devices"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="devices">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th><button (click)="onAddClicked()" class="btn btn-primary">+</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let device of devices">
+      <td>{{ device.name }}</td>
+      <td>
+        <button (click)="onEditClicked(device)" class="btn btn-primary">Edit</button>
+        <button (click)="onRemoveClicked(device)" class="btn btn-danger">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
