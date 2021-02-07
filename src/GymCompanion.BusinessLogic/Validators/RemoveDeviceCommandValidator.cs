@@ -1,4 +1,4 @@
-﻿using CQRSCore;
+﻿using CQRSCore.Interfaces;
 using GymCompanion.Data.Models;
 using GymCompanion.Models.Commands;
 using MongoDbCore.Interfaces;

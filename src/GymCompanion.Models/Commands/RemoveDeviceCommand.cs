@@ -1,4 +1,4 @@
-﻿using CQRSCore;
+﻿using CQRSCore.Interfaces;
 
 namespace GymCompanion.Models.Commands
 {

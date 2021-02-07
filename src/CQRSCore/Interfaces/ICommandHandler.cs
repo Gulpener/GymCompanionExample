@@ -1,4 +1,4 @@
-﻿namespace CQRSCore
+﻿namespace CQRSCore.Interfaces
 {
     public interface ICommandHandler<T> where T: ICommand
     {

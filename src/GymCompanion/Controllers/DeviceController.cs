@@ -1,4 +1,4 @@
-﻿using CQRSCore;
+﻿using CQRSCore.Interfaces;
 using GymCompanion.Models;
 using GymCompanion.Models.Commands;
 using GymCompanion.Models.Queries;

@@ -1,10 +1,8 @@
 ﻿using CQRSCore;
 using GymCompanion.BusinessLogic.Mappers;
 using GymCompanion.Data.Models;
-using GymCompanion.Models;
 using GymCompanion.Models.Commands;
 using MongoDbCore.Interfaces;
-using System.Collections.Generic;
 
 namespace GymCompanion.BusinessLogic.Commands
 {

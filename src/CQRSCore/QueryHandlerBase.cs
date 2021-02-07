@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CQRSCore.Interfaces;
+using System;
 
 namespace CQRSCore
 {
