@@ -1,8 +1,8 @@
-﻿using CQRSCore.Interfaces;
+﻿using CQRSCore;
+using CQRSCore.Interfaces;
 using GymCompanion.Data.Models;
 using GymCompanion.Models.Commands;
 using MongoDbCore.Interfaces;
-using System;
 
 namespace GymCompanion.BusinessLogic.Validators
 {
@@ -14,27 +14,30 @@ namespace GymCompanion.BusinessLogic.Validators
             _deviceData = deviceData;
         }
 
-        public void Validate(RemoveDeviceCommand command)
+        public ValidationResults Validate(ValidationResults results, RemoveDeviceCommand command)
         {
-            ValidateIdNotNull(command.Id);
-            ValidateObjectWithIdExists(command.Id);
+            results = ValidateIdNotNull(results, command.Id);
+            results = ValidateObjectWithIdExists(results, command.Id);
+            return results;
         }
 
-        private void ValidateIdNotNull(string id)
+        private ValidationResults ValidateIdNotNull(ValidationResults results, string id)
         {
             if(string.IsNullOrEmpty(id))
             {
-                throw new ArgumentException("Is null or empty", id);
+                results.AddValidationResult(nameof(id), "{0} cannot be null or empty");
             }
+            return results;
         }
 
-        private void ValidateObjectWithIdExists(string id)
+        private ValidationResults ValidateObjectWithIdExists(ValidationResults results, string id)
         {
             var device = _deviceData.Get(id);
             if(device == null)
             {
-                throw new ArgumentException("No object exist with that id", id);
+                results.AddValidationResult(nameof(id), "There is no object found with {0}");
             }
+            return results;
         }
     }
 }

@@ -18,7 +18,11 @@ namespace CQRSCore
 
         public void Execute(T command)
         {
-            if (_validator != null) _validator.Validate(command);
+            if (_validator != null)
+            {
+                var validationResults = _validator.Validate(new ValidationResults(), command);
+                validationResults.Handle();
+            }
             Handle(command);
         }
 

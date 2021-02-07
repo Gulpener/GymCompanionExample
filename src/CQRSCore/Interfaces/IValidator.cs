@@ -2,6 +2,6 @@
 {
     public interface IValidator<T>
     {
-        void Validate(T validatableObject);
+        ValidationResults Validate(ValidationResults results, T validatableObject);
     }
 }
