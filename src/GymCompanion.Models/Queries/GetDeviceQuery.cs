@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CQRSCore;
+using System;
 
 namespace GymCompanion.Models.Queries
 {
-    public class GetDeviceQuery
+    public class GetDeviceQuery : IQuery
     {
         public GetDeviceQuery(string id)
         {

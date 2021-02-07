@@ -1,6 +1,8 @@
-﻿namespace GymCompanion.Models.Queries
+﻿using CQRSCore;
+
+namespace GymCompanion.Models.Queries
 {
-    public class GetDeviceListQuery
+    public class GetDeviceListQuery : IQuery
     {
     }
 }

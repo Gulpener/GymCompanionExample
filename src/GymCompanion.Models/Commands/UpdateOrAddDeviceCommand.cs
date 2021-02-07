@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CQRSCore;
 
 namespace GymCompanion.Models.Commands
 {
-    public class UpdateOrAddDeviceCommand
+    public class UpdateOrAddDeviceCommand : ICommand
     {
         public UpdateOrAddDeviceCommand(DeviceModel deviceModel)
         {

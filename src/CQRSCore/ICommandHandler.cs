@@ -1,6 +1,6 @@
 ﻿namespace CQRSCore
 {
-    public interface ICommandHandler<T>
+    public interface ICommandHandler<T> where T: ICommand
     {
         void Execute(T command);
     }
