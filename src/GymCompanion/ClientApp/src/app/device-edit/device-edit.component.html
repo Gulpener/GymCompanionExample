@@ -1,0 +1,27 @@
+<h1 id="tableLabel" *ngIf="device.id">Edit device</h1>
+<p *ngIf="device.id">You can edit youre device here.</p>
+
+<h1 id="tableLabel" *ngIf="!device.id">New device</h1>
+<p *ngIf="!device.id">You can add a new device</p>
+
+<p *ngIf="!device"><em>Loading...</em></p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="device">
+  <div class="form-group">
+    <label for="deviceNameInput">Name</label>
+    <input type="text" class="form-control" id="deviceNameInput" [ngModel]="device.name" name="name" ngModel #first="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="functionInput">Functions</label><span (click)="onAddFunctionClicked()" class="btn btn-primary">+</span>
+    <table class="table table-striped" *ngIf="device.functionCollection">
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let function of device.functionCollection">
+        <td>{{function.name}}</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <button type="submit" class="btn-primary btn-primary">Save</button>
+</form>
