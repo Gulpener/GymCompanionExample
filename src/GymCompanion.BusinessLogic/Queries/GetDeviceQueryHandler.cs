@@ -7,7 +7,7 @@ using MongoDbCore.Interfaces;
 
 namespace GymCompanion.BusinessLogic.Queries
 {
-    public class GetDeviceQueryHandler : IQueryHandler<GetDeviceQuery, DeviceModel>
+    public class GetDeviceQueryHandler : QueryHandlerBase<GetDeviceQuery, DeviceModel>
     {
         private IData<DeviceDataModel> _deviceData;
         public GetDeviceQueryHandler(IData<DeviceDataModel> deviceData)
@@ -15,7 +15,7 @@ namespace GymCompanion.BusinessLogic.Queries
             _deviceData = deviceData;
         }
 
-        public DeviceModel Get(GetDeviceQuery command)
+        public override DeviceModel Handle(GetDeviceQuery command)
         {
             return _deviceData.Get(command.Id).MapToDeviceModel();
         }

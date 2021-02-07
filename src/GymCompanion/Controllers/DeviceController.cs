@@ -36,14 +36,14 @@ namespace GymCompanion.Controllers
         [HttpGet("devices")]
         public IEnumerable<DeviceModel> Get()
         {
-            return _getDeviceListQueryHandler.Get(new GetDeviceListQuery());
+            return _getDeviceListQueryHandler.Execute(new GetDeviceListQuery());
         }
 
         [HttpGet]
         public DeviceModel Get(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException();
-            return _getDeviceQueryHandler.Get(new GetDeviceQuery(id));
+            return _getDeviceQueryHandler.Execute(new GetDeviceQuery(id));
         }
 
         [HttpPost("remove")]

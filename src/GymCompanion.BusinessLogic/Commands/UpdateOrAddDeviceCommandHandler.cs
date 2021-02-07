@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace GymCompanion.BusinessLogic.Commands
 {
-    public class UpdateOrAddDeviceCommandHandler : ICommandHandler<UpdateOrAddDeviceCommand>
+    public class UpdateOrAddDeviceCommandHandler : CommandHandlerBase<UpdateOrAddDeviceCommand>
     {
         private IData<DeviceDataModel> _deviceData;
         public UpdateOrAddDeviceCommandHandler(IData<DeviceDataModel> deviceData)
@@ -16,7 +16,7 @@ namespace GymCompanion.BusinessLogic.Commands
             _deviceData = deviceData;
         }
 
-        public void Execute(UpdateOrAddDeviceCommand command)
+        public override void Handle(UpdateOrAddDeviceCommand command)
         {
             if (!string.IsNullOrEmpty(command.DeviceModel.Id))
             {

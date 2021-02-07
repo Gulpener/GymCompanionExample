@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace GymCompanion.BusinessLogic.Queries
 {
-    public class GetDeviceListQueryHandler : IQueryHandler<GetDeviceListQuery, IList<DeviceModel>>
+    public class GetDeviceListQueryHandler : QueryHandlerBase<GetDeviceListQuery, IList<DeviceModel>>
     {
         private IData<DeviceDataModel> _deviceData;
         public GetDeviceListQueryHandler(IData<DeviceDataModel> deviceData)
@@ -17,7 +17,7 @@ namespace GymCompanion.BusinessLogic.Queries
             _deviceData = deviceData;
         }
 
-        public IList<DeviceModel> Get(GetDeviceListQuery query)
+        public override IList<DeviceModel> Handle(GetDeviceListQuery query)
         {
             return _deviceData.GetAll().Select(x=>x.MapToDeviceModel()).ToList();
         }
