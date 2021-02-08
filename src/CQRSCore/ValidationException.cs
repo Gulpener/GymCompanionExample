@@ -9,5 +9,7 @@ namespace CQRSCore
         {
             ValidationResults = validationResults;
         }
+
+        public override string Message => ValidationResults.GetMessages();
     }
 }

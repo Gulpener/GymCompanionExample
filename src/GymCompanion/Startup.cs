@@ -38,6 +38,7 @@ namespace GymCompanion
             services.AddScoped<ICommandHandler<RemoveDeviceCommand>, RemoveDeviceCommandHandler>();
             services.AddScoped<ICommandHandler<UpdateOrAddDeviceCommand>, UpdateOrAddDeviceCommandHandler>();
             services.AddScoped<IValidator<RemoveDeviceCommand>, RemoveDeviceCommandValidator>();
+            services.AddScoped<IValidator<GetDeviceQuery>, GetDeviceQueryValidator>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

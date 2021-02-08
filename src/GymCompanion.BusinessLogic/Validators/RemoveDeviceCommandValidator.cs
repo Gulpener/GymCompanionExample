@@ -32,10 +32,13 @@ namespace GymCompanion.BusinessLogic.Validators
 
         private ValidationResults ValidateObjectWithIdExists(ValidationResults results, string id)
         {
-            var device = _deviceData.Get(id);
-            if(device == null)
+            if (!string.IsNullOrEmpty(id))
             {
-                results.AddValidationResult(nameof(id), "There is no object found with {0}");
+                var device = _deviceData.Get(id);
+                if (device == null)
+                {
+                    results.AddValidationResult(nameof(id), "There is no object found with {0}");
+                }
             }
             return results;
         }

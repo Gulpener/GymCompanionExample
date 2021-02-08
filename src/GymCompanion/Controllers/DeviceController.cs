@@ -42,15 +42,12 @@ namespace GymCompanion.Controllers
         [HttpGet]
         public DeviceModel Get(string id)
         {
-            if (string.IsNullOrEmpty(id)) throw new ArgumentNullException();
             return _getDeviceQueryHandler.Execute(new GetDeviceQuery(id));
         }
 
         [HttpPost("remove")]
         public IActionResult Remove(string id)
         {
-            if (string.IsNullOrEmpty(id)) throw new ArgumentNullException();
-
             _removeDeviceCommandHandler.Execute(new RemoveDeviceCommand(id));
 
             return Ok();

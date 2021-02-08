@@ -17,8 +17,13 @@ namespace CQRSCore
         {
             if(validationResults.Any())
             {
-                throw new ValidationException(this); // Todo:  Create new exception
+                throw new ValidationException(this);
             }    
+        }
+
+        internal string GetMessages()
+        {
+            return string.Join("\r\n", validationResults.Select(x => string.Format(x.Message, x.PropertyName)));
         }
     }
 }
