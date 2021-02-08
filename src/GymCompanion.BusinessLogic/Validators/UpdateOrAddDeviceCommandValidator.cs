@@ -1,5 +1,6 @@
 ﻿using CQRSCore;
 using CQRSCore.Interfaces;
+using CQRSCore.Validation;
 using GymCompanion.Data.Models;
 using GymCompanion.Models;
 using GymCompanion.Models.Commands;

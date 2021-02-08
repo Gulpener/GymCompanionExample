@@ -1,4 +1,5 @@
 ﻿using CQRSCore.Interfaces;
+using CQRSCore.Validation;
 using System;
 
 namespace CQRSCore

@@ -1,4 +1,5 @@
 ﻿using CQRSCore.Interfaces;
+using CQRSCore.Validation;
 
 namespace CQRSCore
 {
@@ -6,10 +7,7 @@ namespace CQRSCore
     {
         private readonly IValidator<T> _validator;
 
-        public CommandHandlerBase()
-        {
-
-        }
+        public CommandHandlerBase() { }
 
         public CommandHandlerBase(IValidator<T> validator)
         {

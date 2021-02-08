@@ -1,4 +1,6 @@
-﻿namespace CQRSCore.Interfaces
+﻿using CQRSCore.Validation;
+
+namespace CQRSCore.Interfaces
 {
     public interface IValidator<T>
     {

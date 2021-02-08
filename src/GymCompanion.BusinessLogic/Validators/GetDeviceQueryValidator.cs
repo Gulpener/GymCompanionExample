@@ -1,5 +1,6 @@
 ﻿using CQRSCore;
 using CQRSCore.Interfaces;
+using CQRSCore.Validation;
 using GymCompanion.Models.Queries;
 
 namespace GymCompanion.BusinessLogic.Validators

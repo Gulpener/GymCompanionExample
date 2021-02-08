@@ -1,4 +1,4 @@
-﻿namespace CQRSCore
+﻿namespace CQRSCore.Validation
 {
     public class ValidationResult
     {
