@@ -17,7 +17,11 @@ namespace CQRSCore
 
         public X Execute(T query)
         {
-            if (_validator != null) _validator.Validate(query);
+            if (_validator != null)
+            {
+                var validationResults = _validator.Validate(new ValidationResults(), query);
+                validationResults.Handle();
+            }
             return Handle(query);
         }
 

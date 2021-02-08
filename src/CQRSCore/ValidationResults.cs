@@ -17,7 +17,7 @@ namespace CQRSCore
         {
             if(validationResults.Any())
             {
-                throw new ArgumentException(); // Todo:  Create new exception
+                throw new ValidationException(this); // Todo:  Create new exception
             }    
         }
     }
