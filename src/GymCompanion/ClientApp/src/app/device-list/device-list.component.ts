@@ -29,6 +29,12 @@ export class DeviceListComponent implements OnInit {
     this.router.navigate(['device-edit', { id: device.id }]);
   }
 
+  onTestClicked(device: Device) {
+    this.deviceService
+      .removeDevice('')
+      .subscribe(_ => this.loadDevices());
+  }
+
   onAddClicked(device: Device) {
     this.router.navigate(['device-add']);
   }

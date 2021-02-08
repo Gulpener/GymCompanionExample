@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CQRSCore.Interfaces;
 
 namespace GymCompanion.Models.Commands
 {
-    public class RemoveDeviceCommand
+    public class RemoveDeviceCommand : ICommand
     {
         public RemoveDeviceCommand(string id)
         {

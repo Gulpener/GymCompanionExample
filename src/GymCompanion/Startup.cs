@@ -1,6 +1,7 @@
-using CQRSCore;
+using CQRSCore.Interfaces;
 using GymCompanion.BusinessLogic.Commands;
 using GymCompanion.BusinessLogic.Queries;
+using GymCompanion.BusinessLogic.Validators;
 using GymCompanion.Data;
 using GymCompanion.Data.Models;
 using GymCompanion.Models;
@@ -36,6 +37,9 @@ namespace GymCompanion
             services.AddScoped<IQueryHandler<GetDeviceQuery, DeviceModel>, GetDeviceQueryHandler>();
             services.AddScoped<ICommandHandler<RemoveDeviceCommand>, RemoveDeviceCommandHandler>();
             services.AddScoped<ICommandHandler<UpdateOrAddDeviceCommand>, UpdateOrAddDeviceCommandHandler>();
+            services.AddScoped<IValidator<RemoveDeviceCommand>, RemoveDeviceCommandValidator>();
+            services.AddScoped<IValidator<GetDeviceQuery>, GetDeviceQueryValidator>();
+            services.AddScoped<IValidator<UpdateOrAddDeviceCommand>, UpdateOrAddDeviceCommandValidator>();
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
