@@ -1,4 +1,5 @@
 ﻿using CQRSCore;
+using CQRSCore.Interfaces;
 using GymCompanion.BusinessLogic.Mappers;
 using GymCompanion.Data.Models;
 using GymCompanion.Models.Commands;
@@ -9,7 +10,7 @@ namespace GymCompanion.BusinessLogic.Commands
     public class UpdateOrAddDeviceCommandHandler : CommandHandlerBase<UpdateOrAddDeviceCommand>
     {
         private IData<DeviceDataModel> _deviceData;
-        public UpdateOrAddDeviceCommandHandler(IData<DeviceDataModel> deviceData)
+        public UpdateOrAddDeviceCommandHandler(IValidator<UpdateOrAddDeviceCommand> validator,IData<DeviceDataModel> deviceData) : base(validator)
         {
             _deviceData = deviceData;
         }
