@@ -1,6 +1,6 @@
-﻿using CQRSCore;
-using CQRSCore.Interfaces;
-using CQRSCore.Validation;
+﻿using GJ.CQRSCore;
+using GJ.CQRSCore.Interfaces;
+using GJ.CQRSCore.Validation;
 using GymCompanion.Models.Queries;
 
 namespace GymCompanion.BusinessLogic.Validators

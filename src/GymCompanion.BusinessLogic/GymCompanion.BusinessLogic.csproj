@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CQRSCore\CQRSCore.csproj" />
+    <PackageReference Include="GJ.CQRSCore" Version="0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GymCompanion.Data\GymCompanion.Data.csproj" />
     <ProjectReference Include="..\GymCompanion.Models\GymCompanion.Models.csproj" />
   </ItemGroup>

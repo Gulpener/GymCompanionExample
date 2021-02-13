@@ -1,4 +1,4 @@
-using CQRSCore.Interfaces;
+using GJ.CQRSCore.Interfaces;
 using GymCompanion.BusinessLogic.Commands;
 using GymCompanion.BusinessLogic.Queries;
 using GymCompanion.BusinessLogic.Validators;

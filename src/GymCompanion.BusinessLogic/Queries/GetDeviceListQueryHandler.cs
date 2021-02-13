@@ -1,4 +1,4 @@
-﻿using CQRSCore;
+﻿using GJ.CQRSCore;
 using GymCompanion.BusinessLogic.Mappers;
 using GymCompanion.Data.Models;
 using GymCompanion.Models;
