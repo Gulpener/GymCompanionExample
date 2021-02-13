@@ -1,4 +1,4 @@
-﻿using CQRSCore;
+﻿using GJ.CQRSCore;
 using System.Collections.Generic;
 
 namespace GymCompanion.Models

@@ -1,5 +1,5 @@
-﻿using CQRSCore;
-using CQRSCore.Interfaces;
+﻿using GJ.CQRSCore;
+using GJ.CQRSCore.Interfaces;
 using GymCompanion.Data.Models;
 using GymCompanion.Models.Commands;
 using MongoDbCore.Interfaces;
