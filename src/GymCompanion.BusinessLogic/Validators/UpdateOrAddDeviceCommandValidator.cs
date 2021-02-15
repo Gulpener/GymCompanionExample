@@ -1,12 +1,9 @@
-﻿using GJ.CQRSCore;
-using GJ.CQRSCore.Interfaces;
+﻿using GJ.CQRSCore.Interfaces;
 using GJ.CQRSCore.Validation;
 using GymCompanion.Data.Models;
 using GymCompanion.Models;
 using GymCompanion.Models.Commands;
-using GymCompanion.Models.Queries;
 using MongoDbCore.Interfaces;
-using System;
 using System.Linq;
 
 namespace GymCompanion.BusinessLogic.Validators
@@ -21,17 +18,8 @@ namespace GymCompanion.BusinessLogic.Validators
 
         public ValidationResults Validate(ValidationResults results, UpdateOrAddDeviceCommand command)
         {
-            results = ValidateNameNotNull(results, command.DeviceModel.Name);
+            results.ValidateNotNullOrEmpty(command.DeviceModel.Name, nameof(command.DeviceModel.Name));
             results = ValidateObjectWithNameExists(results, command.DeviceModel);
-            return results;
-        }
-
-        private ValidationResults ValidateNameNotNull(ValidationResults results, string name)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                results.AddValidationResult(nameof(name), "{0} cannot be null or empty");
-            }
             return results;
         }
 
